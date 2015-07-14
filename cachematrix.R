@@ -1,6 +1,12 @@
 ## create a custom matrix object that can cache its own inverse
 #   including support functions for storing/fetching cached value
 
+# for testing:
+# x<-matrix(1:4,nrow=2,ncol=2)
+# z<-makeCacheMatrix(x)
+# cacheSolve(z)
+# cacheSolve(z)
+
 ## custom matrix object
 makeCacheMatrix <- function(x = matrix()) {
   #initialize inverse to NULL
@@ -26,7 +32,7 @@ makeCacheMatrix <- function(x = matrix()) {
 #   return it if we have it
 #   if not, calculate it and cache it
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x,...) {
         ## Return a matrix that is the inverse of 'x'
         # see if we already have it in the cache
         i <- x$getinverse()
